@@ -25,6 +25,33 @@ customers. These solutions begin at the data level and expand
 out to web and mobile applications for data entry, service outages, 
 water quality, service availability, and capital funds expenditures.
 
+# Data
+
+## Publication geodatabase
+
+To meet security requirements, geodatabases were stood up with both 
+read/write feature access and read-only access. For read-only data, a 
+custom Python script utilizing the arcpy module extracts data nightly 
+from the production enterprise geodatabase, replicates it to a file 
+geodatabase on the web server, and rebuilds the water distribution 
+geometric network, providing data to power applications for both 
+in-house and external customer use.
+
+## Geocoder
+
+Keeping up with utility infrastructure in such a fast-growing area is 
+difficult, _locating_ it can sometimes be just as hard. With so many 
+newcomers to the area, residential street construction also continues 
+to rise, resulting in the need for a custom in-house local geolocator/geocoding 
+service built on the latest and greatest street data based on local 
+knowledge and sources. Geolocators for address points and streets are 
+updated frequently and combined into a composite locator which is then 
+published to ArcGIS Server and consumed in a multitude of web applications, 
+ensuring that staff and end users can find even the newest of addresses 
+with the service area.
+
+# Applications
+
 
 
 
