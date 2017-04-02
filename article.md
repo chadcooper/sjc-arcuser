@@ -1,3 +1,5 @@
+# Equipping workers and empowering citizens with the Esri platform at St. Johns County Utilities
+
 The power of GIS lies in it's ability to be used by anyone for 
 virtually anything - its ability to truly _empower_ users at all 
 levels. The ArcGIS Platform excels in this arena, providing the 
@@ -25,9 +27,9 @@ customers. These solutions begin at the data level and expand
 out to web and mobile applications for data entry, service outages, 
 water quality, service availability, and capital funds expenditures.
 
-# Data
+## Data
 
-## Publication geodatabases
+### Publication geodatabases
 
 To meet security requirements, geodatabases were stood up with both 
 read/write feature access and read-only access. Read/write data is housed 
@@ -38,10 +40,10 @@ geodatabase on the web server, and rebuilds the water distribution
 geometric network, providing data to power applications for both 
 in-house and external customer use. 
 
-## Geocoder
+### Geocoder
 
-Keeping up with utility infrastructure in such a fast-growing area is 
-difficult, _locating_ it can sometimes be just as hard. With so many 
+Keeping up with new and expanding utility infrastructure in a fast-growing area is 
+difficult, _locating_ a particular piece can sometimes be just as hard. With so many 
 newcomers to the area, residential street construction also continues 
 to rise, resulting in the need for a custom in-house local geolocator/geocoding 
 service built on the latest and greatest street data based on local 
@@ -51,17 +53,16 @@ published to ArcGIS Server and consumed in a multitude of web applications,
 ensuring that staff and end users can find even the newest of addresses 
 with the service area.
 
-# Applications
+## Applications
 
-## Internal
+### Internal
 
 Water availability and water quality are paramount for the Utility. To 
 aid Utility staff with these directives, the Utility Isolation Trace  
 from Esri (http://solutions.arcgis.com/utilities/water/help/web-isolation-trace/) 
 was implemented within two Web AppBuilder (WAB) Developer Edition applications - 
 one for field crews to use in the field for running isolation traces and 
-another to be 
-used by managers for further analyzing and disseminating the 
+another to be used by managers for further analyzing and disseminating the 
 isolation trace results.
 
 The field application, referred to internally as "Water Isolation Trace", 
@@ -108,7 +109,17 @@ Figure OO. Selecting a Code Red notification polygon for export with the Extract
 Code Red tool. The polygon gets exported out as a shapefile, zipped up, and 
 presented to the user for download.
 
-## Public
+Powering applications such as these requires data - accurate and trustworthy 
+data. To help insure data quality, the Utility created a Collector application 
+that is a hybrid of the Map Notes and ________ (reporter?) Collector apps. 
+Named "Field Observer", This 
+app is a one-stop shop for Utility staffers to enter not only utility 
+infrastructure issues from the field, but to also address data concerns 
+that arise as part of ground-truthing while in the field.
+
+`<screenshots of field observer>`
+
+### Public
 
 To notify customers of water quantity and/or quality issues, the Esri 
 Drinking Water Advisory template 
@@ -125,8 +136,31 @@ in-house geocoding service) to get a list of services, contacts, and other
 information for that location (Figure X) such as water quality reports, 
 irrigation regulations, and utility rates.
 
+Keeping their customer base up to date on future projects and expenditures 
+is important to the Utility. To help with this a public-facing Capital 
+Improvement Projects (CIP) site was created using the Esri ______ Storymap template. 
+The Utility had powered Storymaps in the traditional methods (CSV file, hosted 
+feature services), but wanted to be able to drive this CIP Storymap dynamically 
+from a enterprise geodatabase backed feature service. With this setup, Utility 
+GIS staff can add content to the Storymap simply by adding new CIP features 
+and/or changing a status in the data with no need to touch the application or 
+anything in its ArcGIS Online (AGO) backend. <more details on what this app shows 
+the public and why>
 
-# References Cited
+<link, screenshots of CIP Storymap>
+
+An internal AGO web application was also stood up to keep Utility staff 
+informed of current and future CIPs. Although more of a viewer than the public 
+Storyteller app, this internal app shows all CIPs, displays attributes, <and 
+links to reports??>
+
+## A time to shine
+
+Hurricane ____ struck the northeast Florida coast on _____. <talk to Tom 
+about the impacts these apps had on hurricane response and recovery>
+
+
+## References Cited
 
 St. Johns County Utility Department, 2015. SJCUD Integrated 
 Water Resources Plan Technical Report. 
@@ -135,3 +169,26 @@ http://www.sjcfl.us/Utilities/media/IWRP/201511SJCIWRPFinal.pdf
 Tibbitts, T., 2016. Technology Transforms St. Johns County Water 
 Utilities, Esri News for Water and Wastewater, Summer 2016. 
 http://www.esri.com/library/newsletters/water/summer-2016.pdf
+
+## About the author
+
+Chad Cooper has worked in the geospatial industry in technician, analyst, 
+and developer roles for the past 15 years in state government, oil and 
+gas, academia, and most recently, consulting on the State and Local 
+government team with Geographic Information Services, Inc. (GISinc, 
+http://www.gisinc.com). At work, he couldn't be happier spending the 
+day writing Python, but is equally happy helping clients such as St. 
+Johns County Utilities, get the most 
+out of their data through the use of the Esri Platform. At home, he 
+enjoys hanging out with his gorgeous wife of 12 years and their three 
+wonderful children. They enjoy hiking, fishing, and doing nothing on a 
+nice beach.
+
+
+
+
+
+
+
+
+

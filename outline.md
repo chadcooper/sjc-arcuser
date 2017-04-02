@@ -4,7 +4,8 @@
 
 * Empowering the masses through the Esri platform
 * Empowering workers and citizens through the Esri platform
-* Equipping workers and empowering citizens with the Esri platform
+* Equipping workers and empowering citizens with the Esri platform at 
+  St. Johns County Utilities
 
 ## Outline
 
