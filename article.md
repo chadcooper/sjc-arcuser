@@ -6,7 +6,7 @@ produce applications to empower their end users. One such
 organization is the St. Johns County, Florida Water 
 Utility, a provider of water, sanitary sewer and reuse water 
 services to 42,000 accounts and 100,000 residents in coastal 
-northeast Florida Tibbitts, 2016). The Utilities' service area is experiencing 
+northeast Florida (Tibbitts, 2016). The Utilities' service area is experiencing 
 new development and high growth, and as a result, in 2013 the St. Johns 
 County Utility Department (SJCUD) initiated the 
 development of an Integrated Water Resources Plan (IWRP) to 
@@ -60,32 +60,53 @@ aid Utility staff with these directives, the Utility Isolation Trace
 from Esri (http://solutions.arcgis.com/utilities/water/help/web-isolation-trace/) 
 was implemented within two Web AppBuilder (WAB) Developer Edition applications - 
 one for field crews to use in the field for running isolation traces and 
-another to be used by managers for further analyzing and disseminating the 
+another to be 
+used by managers for further analyzing and disseminating the 
 isolation trace results.
 
 The field application, referred to internally as "Water Isolation Trace", 
 consists of a WAB Developer Edition application with the Utility Isolation Trace 
 widget configured against the Utility's water distribution network housed in 
 the publication file geodatabase and ArcGIS Server feature services housed 
-in the read/write enterprise geodatabase. Utility field personnel access 
+in the read/write enterprise geodatabase (Figure X). Utility field personnel access 
 Water Isolation Trace over the internet from their Toughbook laptops, allowing 
 them to conduct isolation traces while out in the field assessing current 
 conditions. Isolation trace results can be saved to the enterprise 
 geodatabase, enabling other applications to consume the data.
 
-The managerial application, Advisory Manager, is a clone of the Water 
+![iso-trace-1](images/isolation-trace-app-1.png)
+
+Figure X. Water Isolation Trace application.
+
+The managerial application, Advisory Manager (Figure TT), is a clone of the Water 
 Isolation Trace application, with the addition of the Esri WAB Edit widget and two 
 custom (todo are they really custom?) widgets to work with the Utility's 
 existing Code Red system (https://ecnetwork.com/community-notification/). 
 Code Red is used to notify customers of outages and other potential water supply 
-and quality issues. The Create Code Red tool (Figure X) takes a outage area 
+and quality issues. The Create Code Red tool (Figure PP) takes a outage area 
 polygon from an isolation trace run, intersects it with parcel polygons to 
-prepare a notification area. The Extract Code Red Tool is a WAB widget created 
-from a geoprocessing script based off the TODO geoprocessing tool. This 
+prepare a notification area. The Extract Code Red Tool is a custom WAB widget powered 
+by a custom Python geoprocessing script. This 
 tool enables the Utility to export a Code Red notification area from 
-Advisory Manager as a shapefile for import into the Code Red system. Code Red 
+Advisory Manager as a shapefile for import into the Code Red system (Figure OO). Code Red 
 accepts the shapefile as input and gathers all registered users in that 
 area and sends out notifications.
+
+![adv-mgr-1](images/advisory-manager-application-1.png)
+
+Figure TT. Advisory Manager application with Create Code Red tool setup to be run.
+
+![adv-mgr-2](images/advisory-manager-application-2.png)
+
+Figure PP. Advisory Manager with Precautionary Boil Water Notice Code Red 
+tool run results. Yellow polygon represents customers to be notified via 
+Code Red system of boil water notice, as a result of isolation trace run.
+
+![adv-mgr-3](images/advisory-manager-application-3.png)
+
+Figure OO. Selecting a Code Red notification polygon for export with the Extract 
+Code Red tool. The polygon gets exported out as a shapefile, zipped up, and 
+presented to the user for download.
 
 ## Public
 
