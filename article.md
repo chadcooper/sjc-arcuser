@@ -185,8 +185,7 @@ and developer roles for the past 15 years in state government, oil and
 gas, academia, and most recently, consulting on the State and Local 
 government team with Geographic Information Services, Inc. (GISinc, 
 http://www.gisinc.com). At work, he couldn't be happier spending the 
-day writing Python, but is equally happy helping clients such as St. 
-Johns County Utilities, get the most 
+day writing Python and helping clients such as St. Johns County Utilities get the most 
 out of their data through the use of the Esri Platform. At home, he 
 enjoys hanging out with his gorgeous wife of 12 years and their three 
 wonderful children. They enjoy hiking, fishing, and doing nothing on a 
