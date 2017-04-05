@@ -166,7 +166,15 @@ about the impacts these apps had on hurricane response and recovery>
 
 ## Conclusion
 
-
+St. Johns County Utilities is using the Esri Platform to enable their workforce and 
+empower their customers. By putting the right tools, maps, and applications into 
+the hands of their field workforce, they are able to in turn provide 
+quality data, up-to-date information, and timely and accurate 
+notifications to their customers. With the help of a healthy GIS, 
+the Utility will be able to keep up with rapid growth in a fast-changing 
+world. Even though the Utility is a mature 
+GIS shop, they continue discovering new ways to utilize GIS and 
+the Esri Platform.
 
 ## References Cited
 
@@ -182,7 +190,8 @@ http://www.esri.com/library/newsletters/water/summer-2016.pdf
 
 Chad Cooper has worked in the geospatial industry in technician, analyst, 
 and developer roles for the past 15 years in state government, oil and 
-gas, academia, and most recently, consulting on the State and Local 
+gas, academia, and most recently, as a Solutions Engineer consulting 
+on the State and Local 
 government team with Geographic Information Services, Inc. (GISinc, 
 http://www.gisinc.com). At work, he couldn't be happier spending the 
 day writing Python and helping clients such as St. Johns County Utilities get the most 
