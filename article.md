@@ -56,8 +56,6 @@ within the service area.
 
 ## Applications
 
-### Internal
-
 Water availability and quality are paramount for the Utility. To 
 aid Utility staff with these directives, the Utility Isolation Trace  
 from Esri (http://solutions.arcgis.com/utilities/water/help/web-isolation-trace/) 
@@ -70,11 +68,13 @@ The field application, referred to internally as "Water Isolation Trace",
 consists of a WAB Developer Edition application with the Utility Isolation Trace 
 widget. It is configured against the Utility's water distribution network housed in 
 the publication file geodatabase and ArcGIS Server feature services housed 
-in the read/write enterprise geodatabase (Figure X). Utility personnel access 
-Water Isolation Trace out in the field over the internet from their Toughbook laptops, allowing 
-them to conduct isolation traces while onsite assessing current 
-conditions. Isolation trace results can be saved to the enterprise 
-geodatabase, enabling other applications, such as Advisory Manager, to consume the data.
+in the read/write enterprise geodatabase (Figure X). Repair crews in the field 
+access Water Isolation Trace over the internet from their laptops and tablets, 
+allowing them to conduct isolation traces while onsite assessing current 
+conditions. Isolation trace results can be saved to the enterprise geodatabase, 
+saving significant amounts of time by reducing the necessity of coordinating 
+with staff back at the office. Other applications, such as Advisory Manager, 
+can then consume the data.
 
 ![Figure X. Water Isolation Trace application.](images/isolation-trace-app-1.png)
 
@@ -92,6 +92,15 @@ Advisory Manager as a shapefile for import into the Code Red system (Figure OO).
 accepts the shapefile as an input, gathers all registered users in that 
 area, and sends out notifications regarding the issue, helping the Utility to 
 streamline their customer notification processes.
+
+Advisory Manager is also used to manage the statuses of drinking water advisories. 
+Following a recent water main break, SCJUD's Environmental Manager was able to quickly 
+create a Boil Water Notice for the impacted customers and push that information 
+out to the public. Once the lab tests determined that the water was safe for 
+consumption it was just as easy to issue a retraction; so easy in fact that the 
+retraction was issued using Advisory Manager on a mobile phone from a tennis court.
+This anytime/anywhere application use makes the flow of information from the Utility to 
+their customers smooth and virtually instantaneous. 
 
 ![Figure TT. Advisory Manager application with Create Code Red tool setup to be run.](images/advisory-manager-application-1.png)
 
@@ -113,7 +122,13 @@ actions can be taken.
 
 ![Figure YY. Field Observer Collector Map showing missing asset location collected in the field.](images/field-observer-1.png){#id .class width=300}
 
-### Public
+Field Observer has been used recently to increase the accuracy of GIS data and 
+streamline communication between field crews and the GIS team. Field crews 
+verified the location of valves and used Field Observer to note changes to 
+valve locations. In the past, changes such as these were communicated using 
+screenshots and a email for each valve. Now, the information is added to the 
+map, which is instantly visible to GIS staff, resulting in a reduced volume 
+of emails and an increased flow of information.
 
 To notify customers of water quantity and/or quality issues, the Esri 
 Drinking Water Advisory template 
@@ -159,10 +174,17 @@ photographs (Figure SS).
 
 ![Figure SS. Internal Capital Improvement Projects web app showing all current and planned projects.](images/cip-viewer-2.png)
 
-## A time to shine
+After Hurricane Matthew hit the area in early October 2016, the Utility was able 
+to quickly deploy applications to aid in recovery. A Damage Assessment tool was used 
+to quickly assess damage to approximately 360 liftstations 
+in a matter of days. Teams equipped with tablets began assessments on a Tuesday and were 
+done by Thursday. Liftstation conditions were quickly recorded, including 
+photographs of any damage. Information gathered with this tool was used for documentation 
+for FEMA reimbursement.
 
-Hurricane ____ struck the northeast Florida coast on _____. <talk to Tom 
-about the impacts these apps had on hurricane response and recovery>
+To demonstrate the sheer volume of work completed during and after the hurricane, a 
+time line application was built and has been used in various presentations to demonstrate 
+the speed at which issues were addressed and resolved.
 
 ## Conclusion
 
@@ -172,9 +194,15 @@ the hands of their field workforce, they are able to in turn provide
 quality data, up-to-date information, and timely and accurate 
 notifications to their customers. With the help of a healthy GIS, 
 the Utility will be able to keep up with rapid growth in a fast-changing 
-world. Even though the Utility is a mature 
-GIS shop, they continue discovering new ways to utilize GIS and 
-the Esri Platform.
+world. In the aftermath of natural disaster, GIS applications helped power and 
+aid the recovery effort. Even though the Utility is a mature GIS shop, they 
+continue discovering new ways to utilize GIS and the Esri Platform.
+
+## Acknowledgements
+
+The author would like to thank Tom Tibbetts and Bryan Bommersbach at 
+St. Johns County Water Utilities for their help with this article and 
+Michael Parma of GISinc for being a pretty awesome Technical Architect.
 
 ## References Cited
 
