@@ -1,11 +1,11 @@
 # Equipping workers and empowering citizens with the Esri platform at St. Johns County Utilities
 
-The power of GIS lies in it's ability to be used by anyone for 
+The power of GIS lies within its ability to be used by anyone for 
 virtually anything - its ability to truly _empower_ users at all 
-levels. The ArcGIS Platform excels in this arena, providing the 
+levels. The ArcGIS Platform excels in this area, providing the 
 software, tools, and templates to allow organizations to 
-produce applications to empower their end users. One such 
-organization is the St. Johns County, Florida Water 
+produce applications that empower their end users. One such 
+organization is the St. Johns County Water 
 Utility, a provider of water, sanitary sewer and reuse water 
 services to 42,000 accounts and 100,000 residents in coastal 
 northeast Florida (Tibbitts, 2016). The Utilities' service area is experiencing 
@@ -16,27 +16,28 @@ implement water resources solutions through 2040. The IWRP
 indicates that by 2040, the SJCUD customer base will grow by 
 88,000 people under medium-growth scenarios (St. Johns County 
 Utility Department, 2015). Current growth combined with this 
-anticipated future growth is and will continue to bring challenges 
+anticipated future growth will continue to bring challenges 
 of expanded capacity, replacing infrastructure, and meeting new 
-regulations for water reuse and availablity requirements 
+regulations for water reuse and availability requirements 
 (Tibbitts, 2016). For years the Utility has embraced the capabilities of 
 its GIS, but in order to meet the needs of such high growth 
-and expansion, they realized a variety of solutions would needed 
-to be put in place to empower both their workforce and 
+and expansion, they realized a variety of solutions would be needed 
+to be put in place to empower both their workforce and its
 customers. These solutions begin at the data level and expand 
 out to web and mobile applications for data entry and analysis, service outages, 
 water quality, service availability, and capital funds expenditures.
 
 ## Data
 
-### Publication geodatabases
+### Publication Geodatabases
 
-To meet security requirements, geodatabases were stood up with both 
-read/write feature access and read-only access. Read/write feature service data is housed 
-in a enterprise geodatabase separate from main production. For read-only data, a 
+Quality data is the lifeblood of any great application. To meet security 
+requirements, geodatabases were stood up with both read/write 
+feature access and read-only access. Read/write feature service data is housed 
+in an enterprise geodatabase separate from main production. For read-only data, a 
 custom Python script utilizing the arcpy module extracts data nightly 
-from the main Utility production enterprise geodatabase, replicates it to a file 
-geodatabase on the web server, and rebuilds the water distribution 
+from the main Utility production enterprise geodatabase, replicates it to a publication 
+file geodatabase on the application server, and rebuilds the water distribution 
 geometric network, providing data to power applications for both 
 in-house and external customer use. 
 
@@ -45,24 +46,26 @@ in-house and external customer use.
 Keeping up with new and expanding utility infrastructure in a fast-growing area is 
 difficult, _locating_ a particular piece of infrastructure can sometimes be just 
 as hard. With so many 
-newcomers to the area, residential street construction also continues 
-to rise, resulting in the need for a custom in-house local geolocator/geocoding 
+newcomers to the area, residential street construction continues 
+to rise, resulting in the need for a custom in-house geolocator/geocoding 
 service built on the latest and greatest street data based on local 
 knowledge and sources. Geolocators for address points and streets are 
-updated frequently and combined into a composite locator which is then 
+frequently updated and combined into a composite locator which is then 
 published to ArcGIS Server and consumed in a multitude of web applications, 
 ensuring that staff and end users can find even the newest of addresses 
 within the service area.
 
 ## Applications
 
+### Field
+
 Water availability and quality are paramount for the Utility. To 
-aid Utility staff with these directives, the Utility Isolation Trace  
+aid Utility staff with these directives, the Utility Isolation Trace tool 
 from Esri (http://solutions.arcgis.com/utilities/water/help/web-isolation-trace/) 
 was implemented within two Web AppBuilder (WAB) Developer Edition applications - 
-one for field crews to use in the field for running isolation traces and 
-another to be used by managers for further analyzing and disseminating the 
-isolation trace results as outage information to the public.
+one for field crews to run isolation traces during water main breaks and 
+another to be used by managers for further analyzing, maintaining, and 
+disseminating isolation trace results as outage information to the public.
 
 The field application, referred to internally as "Water Isolation Trace", 
 consists of a WAB Developer Edition application with the Utility Isolation Trace 
@@ -71,12 +74,36 @@ the publication file geodatabase and ArcGIS Server feature services housed
 in the read/write enterprise geodatabase (Figure X). Repair crews in the field 
 access Water Isolation Trace over the internet from their laptops and tablets, 
 allowing them to conduct isolation traces while onsite assessing current 
-conditions. Isolation trace results can be saved to the enterprise geodatabase, 
-saving significant amounts of time by reducing the necessity of coordinating 
-with staff back at the office. Other applications, such as Advisory Manager, 
-can then consume the data.
+conditions, such as a main break. Isolation trace results can be saved to the 
+enterprise geodatabase, saving significant amounts of time by reducing the 
+necessity of coordinating with staff back at the office. Other applications, 
+such as Advisory Manager, can then consume the isolation trace data and results.
 
 ![Figure X. Water Isolation Trace application.](images/isolation-trace-app-1.png)
+
+Powering applications such as these requires accurate and trustworthy 
+data. To help insure data quality, the Utility created a Collector application 
+that is a hybrid of the Map Notes and Map Change Request Collector apps. 
+Named "Field Observer" (Figure YY), this app is a one-stop shop for Utility staffers to 
+enter not only utility infrastructure issues from the field, but also address data concerns 
+that arise as part of ground-truthing while in the field. Conditions such as a paved-over 
+valve, vegetation issue, or evidence of a leak can be captured as well as sewer, 
+water, and reuse map data change requests. Field Observer allows Utility 
+personnel to quickly and easily identify both infrastructure and data issues and 
+get those issues logged and into the system of record where further corrective 
+actions can be taken.
+
+![Figure YY. Field Observer Collector Map showing missing asset location collected in the field.](images/field-observer-1.png){#id .class width=300}
+
+Field Observer has been used recently to increase the accuracy of GIS data and 
+streamline communication between field crews and the GIS team. Field crews 
+verified the location of valves and used Field Observer to note changes to 
+valve locations. In the past, changes such as these were communicated using 
+screenshots and an email for each valve. Now, the information is added to the 
+map, which is instantly visible to GIS staff, resulting in a reduced volume 
+of emails and an increased flow of information.
+
+### Office
 
 The managerial application, Advisory Manager (Figure TT), is a clone of the Water 
 Isolation Trace application, with the addition of the Esri WAB Edit widget and two 
@@ -93,42 +120,22 @@ accepts the shapefile as an input, gathers all registered users in that
 area, and sends out notifications regarding the issue, helping the Utility to 
 streamline their customer notification processes.
 
-Advisory Manager is also used to manage the statuses of drinking water advisories. 
-Following a recent water main break, SCJUD's Environmental Manager was able to quickly 
-create a Boil Water Notice for the impacted customers and push that information 
-out to the public. Once the lab tests determined that the water was safe for 
-consumption it was just as easy to issue a retraction; so easy in fact that the 
-retraction was issued using Advisory Manager on a mobile phone from a tennis court.
-This anytime/anywhere application use makes the flow of information from the Utility to 
-their customers smooth and virtually instantaneous. 
-
 ![Figure TT. Advisory Manager application with Create Code Red tool setup to be run.](images/advisory-manager-application-1.png)
 
 ![Figure PP. Advisory Manager with Precautionary Boil Water Notice Code Red tool run results. Yellow polygon represents customers to be notified via Code Red system of boil water notice, as a result of isolation trace run.](images/advisory-manager-application-2.png)
 
 ![Figure OO. Selecting a Code Red notification polygon for export with the Extract Code Red tool. The polygon gets exported out as a shapefile, zipped up, and presented to the user for download.](images/advisory-manager-application-3.png)
 
-Powering applications such as these requires data - accurate and trustworthy 
-data. To help insure data quality, the Utility created a Collector application 
-that is a hybrid of the Map Notes and Map Change Request Collector apps. 
-Named "Field Observer" (Figure YY), this app is a one-stop shop for Utility staffers to 
-enter not only utility infrastructure issues from the field, but to also address data concerns 
-that arise as part of ground-truthing while in the field. Conditions such as a paved-over 
-valve, vegetation issue, or evidence of a leak can be captured as well as sewer, 
-water, and reuse map data change requests. Field Observer allows Utility 
-personnel to quickly and easily identify both infrastructure and data issues and 
-get those issues logged and into the system of record where further corrective 
-actions can be taken.
+Advisory Manager is also used to manage the statuses of drinking water advisories. 
+Following a recent water main break, SJCUD's Environmental Manager quickly 
+created a Boil Water Notice for the impacted customers and pushed that information 
+out to the public. Once the lab tests determined that the water was safe for 
+consumption it was just as easy to issue a retraction; so easy in fact that the 
+retraction was issued using Advisory Manager on a mobile phone from a tennis court.
+This anytime/anywhere application use makes the flow of information from the Utility to 
+their customers smooth and virtually instantaneous. 
 
-![Figure YY. Field Observer Collector Map showing missing asset location collected in the field.](images/field-observer-1.png){#id .class width=300}
-
-Field Observer has been used recently to increase the accuracy of GIS data and 
-streamline communication between field crews and the GIS team. Field crews 
-verified the location of valves and used Field Observer to note changes to 
-valve locations. In the past, changes such as these were communicated using 
-screenshots and a email for each valve. Now, the information is added to the 
-map, which is instantly visible to GIS staff, resulting in a reduced volume 
-of emails and an increased flow of information.
+### Community
 
 To notify customers of water quantity and/or quality issues, the Esri 
 Drinking Water Advisory template 
@@ -136,14 +143,14 @@ Drinking Water Advisory template
 was deployed (https://goo.gl/q5GEDn). Boil water notices, boil water notice 
 retractions, water outages, and low water pressure notices created through the 
 Create Code Red tool are displayed here as Drinking Water Alerts and Advisories 
-(Figure RR). 
-The Alerts and Advisories layer is updated from within the Advisory Manager 
-application.
+(Figure RR). The Alerts and Advisories layer is updated from within the Advisory 
+Manager application.
 
 ![Figure RR. Drinking Water Advisories public notification application showing a current Boil Water Retraction notice.](images/drinking-water-advisory-1.png) 
 
 To inform customers of services available in their area, the Esri Information 
-Lookup template was implemented as the Customer Services Summary application 
+Lookup template (http://solutions.arcgis.com/shared/help/information-lookup/) 
+was implemented as the Customer Services Summary application 
 (https://goo.gl/VZ7Zw9). Users can click on the map or search by address (using the custom 
 in-house geocoding service) to get a list of services, contacts, and other 
 information for that location (Figure QQ) such as water quality reports, 
@@ -156,7 +163,7 @@ is important to any utility. To help with this a public-facing Capital
 Improvement Projects (CIP) site (https://maps.sjcutility.us/cip/) was 
 created using the Esri Story Map Tour template customized with a tabbed 
 layout for viewing reuse, water, and sewer capital improvement projects by category (Figure AA). 
-The Utility had powered Story Maps in the traditional methods in the past (CSV file, hosted 
+The Utility had powered Story Maps in the traditional methods in the past (CSV file and hosted 
 feature services), but wanted to be able to drive this CIP Story Map dynamically 
 from a enterprise geodatabase backed feature service. With this setup, Utility 
 GIS staff can add content to the Story Map simply by adding new CIP features 
@@ -167,7 +174,7 @@ what the investment can do for them.
 
 ![Figure AA. Capital Improvement Projects Story Map showing a variety of ongoing Utility sewer projects.](images/cip-viewer-1.png)
 
-An internal-only AGO web application was also stood up to keep Utility staff 
+An internal-only AGO web application was also put in place to keep Utility staff 
 informed of current and future CIPs. Although simply a viewer, this internal 
 app shows all CIPs and provides full access to data attributes and full-resolution 
 photographs (Figure SS).
@@ -198,9 +205,10 @@ the hands of their field workforce, they are able to in turn provide
 quality data, up-to-date information, and timely and accurate 
 notifications to their customers. With the help of a healthy GIS, 
 the Utility will be able to keep up with rapid growth in a fast-changing 
-world. In the aftermath of natural disaster, GIS applications helped power and 
+world. In the aftermath of a natural disaster, GIS applications helped power and 
 aid the recovery effort. Even though the Utility is a mature GIS shop, they 
-continue discovering new ways to utilize GIS and the Esri Platform.
+continue discovering new ways to utilize GIS and the Esri Platform to help them 
+gain efficiencies and save themselves and their customers money.
 
 ## Acknowledgements
 
@@ -233,12 +241,3 @@ out of their data through the use of the Esri Platform. At home, he
 enjoys hanging out with his gorgeous wife of 12 years and their three 
 wonderful children. They enjoy hiking, fishing, and doing nothing on a 
 nice beach.
-
-
-
-
-
-
-
-
-
