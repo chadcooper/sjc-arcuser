@@ -174,17 +174,21 @@ photographs (Figure SS).
 
 ![Figure SS. Internal Capital Improvement Projects web app showing all current and planned projects.](images/cip-viewer-2.png)
 
-After Hurricane Matthew hit the area in early October 2016, the Utility was able 
-to quickly deploy applications to aid in recovery. A Damage Assessment tool was used 
-to quickly assess damage to approximately 360 liftstations 
-in a matter of days. Teams equipped with tablets began assessments on a Tuesday and were 
-done by Thursday. Liftstation conditions were quickly recorded, including 
-photographs of any damage. Information gathered with this tool was used for documentation 
-for FEMA reimbursement.
-
-To demonstrate the sheer volume of work completed during and after the hurricane, a 
-time line application was built and has been used in various presentations to demonstrate 
-the speed at which issues were addressed and resolved.
+After Hurricane Matthew hit the area in early October 2016, the Utility was 
+able to quickly deploy applications to aid in response and recovery. A Damage 
+Assessment tool was used to quickly assess damage to approximately 360 
+liftstations. Teams equipped with tablets began assessments, completing the 
+project within a matter of days and ahead of schedule. Liftstation conditions 
+were quickly recorded, including photographs of any damage. Information 
+gathered with this tool was used for documentation for insurance evaluation 
+and for FEMA reimbursement. Public Water Advisories were posted to the 100,000 
+customers without water. Sanitary Sewer Overflows were located, noticed to the 
+public, and inspected for water quality compliance. The hurricane response 
+and recovery tasks were tracked and reported using Cityworks and ArcGIS Server. 
+To demonstrate the sheer volume of work completed during and after the 
+hurricane, a time line application (https://goo.gl/Wa54uK) 
+was built and has been used in various presentations to demonstrate the speed 
+at which issues were addressed and resolved.
 
 ## Conclusion
 
@@ -200,9 +204,11 @@ continue discovering new ways to utilize GIS and the Esri Platform.
 
 ## Acknowledgements
 
-The author would like to thank Tom Tibbetts and Bryan Bommersbach at 
-St. Johns County Water Utilities for their help with this article and 
-Michael Parma of GISinc for being a pretty awesome Technical Architect.
+The author would like to thank Tom Tibbitts, Karri Thomas, and Bryan Bommersbach at 
+St. Johns County Water Utilities for partnering with GISinc and for their 
+help with this article. Michael Parma and Chris Blinn of GISinc were 
+both extremely instrumental in workflows and applications implemented for 
+the Utility by GISinc.
 
 ## References Cited
 
