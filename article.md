@@ -72,7 +72,7 @@ The field application, referred to internally as "Water Isolation Trace",
 consists of a WAB Developer Edition application with the Utility Isolation Trace 
 widget. It is configured against the Utility's water distribution network housed in 
 the publication file geodatabase and ArcGIS Server feature services housed 
-in the read/write enterprise geodatabase (Figure X). Repair crews in the field 
+in the read/write enterprise geodatabase (Figure 1). Repair crews in the field 
 access Water Isolation Trace over the internet from their laptops and tablets, 
 allowing them to conduct isolation traces while onsite assessing current 
 conditions, such as a main break. Isolation trace results can be saved to the 
@@ -80,12 +80,12 @@ enterprise geodatabase, saving significant amounts of time by reducing the
 necessity of coordinating with staff back at the office. Other applications, 
 such as Advisory Manager, can then consume the isolation trace data and results.
 
-![Figure X. Water Isolation Trace application.](images/isolation-trace-app-1.png)
+![Figure 1. Water Isolation Trace application.](images/isolation-trace-app-1.png)
 
 Powering applications such as these requires accurate and trustworthy 
 data. To help insure data quality, the Utility created a Collector application 
 that is a hybrid of the Map Notes and Map Change Request Collector apps. 
-Named "Field Observer" (Figure YY), this app is a one-stop shop for Utility staffers to 
+Named "Field Observer" (Figure 2), this app is a one-stop shop for Utility staffers to 
 enter not only utility infrastructure issues from the field, but also address data concerns 
 that arise as part of ground-truthing while in the field. Conditions such as a paved-over 
 valve, vegetation issue, or evidence of a leak can be captured as well as sewer, 
@@ -93,7 +93,7 @@ water, and reuse map data change requests. Field Observer allows Utility
 personnel to quickly and easily identify both infrastructure and data issues by getting them logged and into the system of record where further corrective 
 actions can be taken.
 
-![Figure YY. Field Observer Collector Map showing the location of a missing asset collected in the field.](images/field-observer-1.png){#id .class width=300}
+![Figure 2. Field Observer Collector Map showing the location of a missing asset collected in the field.](images/field-observer-1.png){#id .class width=300}
 
 Field Observer has been used recently to increase the accuracy of GIS data and 
 streamline communication between field crews and the GIS team. Field crews 
@@ -105,26 +105,26 @@ of emails and an increased flow of information.
 
 ### Office
 
-The managerial application, Advisory Manager (Figure TT), is a clone of the Water 
+The managerial application, Advisory Manager (Figure 3), is a clone of the Water 
 Isolation Trace application, with the addition of the Esri WAB Edit widget and two 
 custom widgets to work with the Utility's 
 existing Code Red system (https://ecnetwork.com/community-notification/). 
 Code Red is used to notify customers of outages and other potential water supply 
-and quality issues. The Create Code Red tool (Figure PP) takes an outage area 
+and quality issues. The Create Code Red tool (Figure 4) takes an outage area 
 polygon from an isolation trace run and intersects it with parcel polygons to 
 prepare a notification area. The Extract Code Red Tool is a custom WAB widget powered 
 by a slightly modified version of the Esri Extract Data script tool from the Server 
 Tools Toolbox. This tool allows a user to select a Code Red polygon to export from 
-Advisory Manager as a shapefile for import into the Code Red system (Figure OO). Code Red 
+Advisory Manager as a shapefile for import into the Code Red system (Figure 5). Code Red 
 accepts the shapefile as an input, gathers all registered users in that 
 area, and sends out notifications regarding the issue; helping the Utility to 
 streamline their customer notification processes.
 
-![Figure TT. Advisory Manager application with Create Code Red tool setup to be run.](images/advisory-manager-application-1.png)
+![Figure 3. Advisory Manager application with Create Code Red tool setup to be run.](images/advisory-manager-application-1.png)
 
-![Figure PP. Advisory Manager with Precautionary Boil Water Notice Code Red tool run results. Yellow polygon represents customers to be notified via Code Red system of boil water notice, as a result of isolation trace run.](images/advisory-manager-application-2.png)
+![Figure 4. Advisory Manager with Precautionary Boil Water Notice Code Red tool run results. Yellow polygon represents customers to be notified via Code Red system of boil water notice, as a result of isolation trace run.](images/advisory-manager-application-2.png)
 
-![Figure OO. Selecting a Code Red notification polygon for export with the Extract Code Red tool. The polygon gets exported out as a shapefile, zipped up, and presented to the user for download.](images/advisory-manager-application-3.png)
+![Figure 5. Selecting a Code Red notification polygon for export with the Extract Code Red tool. The polygon gets exported out as a shapefile, zipped up, and presented to the user for download.](images/advisory-manager-application-3.png)
 
 Advisory Manager is also used to manage the status of drinking water advisories. 
 Following a recent water main break, SJCUD's Environmental Manager quickly 
@@ -143,26 +143,26 @@ Drinking Water Advisory template
 was deployed (https://goo.gl/q5GEDn). Boil water notices, boil water notice 
 retractions, water outages, and low water pressure notices created through the 
 Create Code Red tool are displayed here as Drinking Water Alerts and Advisories 
-(Figure RR). The Alerts and Advisories layer is updated from within the Advisory 
+(Figure 6). The Alerts and Advisories layer is updated from within the Advisory 
 Manager application.
 
-![Figure RR. Drinking Water Advisories public notification application showing a current Boil Water Retraction notice.](images/drinking-water-advisory-1.png) 
+![Figure 6. Drinking Water Advisories public notification application showing a current Boil Water Retraction notice.](images/drinking-water-advisory-1.png) 
 
 To inform customers of services available in their area, the Esri Information 
 Lookup template (http://solutions.arcgis.com/shared/help/information-lookup/) 
 was implemented as the Customer Services Summary application 
 (https://goo.gl/VZ7Zw9). Users can click on the map or search by address (using the custom 
 in-house geocoding service) to get a list of services, contacts, and other 
-information for that location (Figure QQ) such as water quality reports, 
+information for that location (Figure 7) such as water quality reports, 
 irrigation regulations, and utility rates.
 
-![Figure QQ. The Customer Services Summary application informs users of services available in their area and provides links to rate and water quality information.](images/customer-services-summary-1.png)
+![Figure 7. The Customer Services Summary application informs users of services available in their area and provides links to rate and water quality information.](images/customer-services-summary-1.png)
 
 Keeping their customer base up to date on future projects and expenditures 
 is important to any utility. To help with this a public-facing Capital 
 Improvement Projects (CIP) site (https://maps.sjcutility.us/cip/) was 
 created using the Esri Story Map Tour template customized with a tabbed 
-layout for viewing reuse, water, and sewer capital improvement projects by category (Figure AA). 
+layout for viewing reuse, water, and sewer capital improvement projects by category (Figure 8). 
 The Utility had powered Story Maps in the traditional methods in the past (CSV file and hosted 
 feature services), but wanted to be able to drive this CIP Story Map dynamically 
 from a enterprise geodatabase backed feature service. With this setup, Utility 
@@ -172,14 +172,14 @@ any items in its ArcGIS Online (AGO) backend. With this application, the
 public can learn where capital investments are being made in the county and 
 what the investment can do for them.
 
-![Figure AA. Capital Improvement Projects Story Map showing a variety of ongoing Utility sewer projects.](images/cip-viewer-1.png)
+![Figure 8. Capital Improvement Projects Story Map showing a variety of ongoing Utility sewer projects.](images/cip-viewer-1.png)
 
 An internal-only AGO web application was also put in place to keep Utility staff 
 informed of current and future CIPs. Although simply a viewer, this internal 
 app shows all CIPs and provides full access to data attributes and full-resolution 
-photographs (Figure SS).
+photographs (Figure 9).
 
-![Figure SS. Internal Capital Improvement Projects web app showing all current and planned projects.](images/cip-viewer-2.png)
+![Figure 9. Internal Capital Improvement Projects web app showing all current and planned projects.](images/cip-viewer-2.png)
 
 After Hurricane Matthew hit the area in early October 2016, the Utility was 
 able to quickly deploy applications to aid in response and recovery. A Damage 
@@ -209,6 +209,8 @@ world. In the aftermath of a natural disaster, GIS applications helped power and
 aid the recovery effort. Even though the Utility is a mature GIS shop, they 
 continue discovering new ways to utilize GIS and the Esri Platform to help them 
 gain efficiencies and save themselves and their customers money.
+
+For more information, please contact Chad Cooper at chad.cooper@gisinc.com.
 
 ## Acknowledgements
 
