@@ -1,11 +1,13 @@
 # Equipping workers and empowering citizens with the Esri platform at St. Johns County Utilities
 
+Chad Cooper, Solutions Engineer, Geographic Information Services, Inc. (GISinc)
+
 The power of GIS lies within its ability to be used by anyone for 
 virtually anything - its ability to truly _empower_ users at all 
 levels. The ArcGIS Platform excels in this area, providing the 
 software, tools, and templates to allow organizations to 
 produce applications that empower their end users. One such 
-organization is the St. Johns County Water 
+organization is St. Johns County Water 
 Utility, a provider of water, sanitary sewer and reuse water 
 services to 42,000 accounts and 100,000 residents in coastal 
 northeast Florida (Tibbitts, 2016). The Utilities' service area is experiencing 
@@ -36,10 +38,9 @@ requirements, geodatabases were stood up with both read/write
 feature access and read-only access. Read/write feature service data is housed 
 in an enterprise geodatabase separate from main production. For read-only data, a 
 custom Python script utilizing the arcpy module extracts data nightly 
-from the main Utility production enterprise geodatabase, replicates it to a publication 
+from the main Utility production enterprise geodatabase. To provide data to power applications for both in-house and external customer use, the script replicates it to a publication 
 file geodatabase on the application server, and rebuilds the water distribution 
-geometric network, providing data to power applications for both 
-in-house and external customer use. 
+geometric network. 
 
 ### Geocoder
 
@@ -47,11 +48,11 @@ Keeping up with new and expanding utility infrastructure in a fast-growing area 
 difficult, _locating_ a particular piece of infrastructure can sometimes be just 
 as hard. With so many 
 newcomers to the area, residential street construction continues 
-to rise, resulting in the need for a custom in-house geolocator/geocoding 
+to rise. This results in the need for a custom in-house geolocator/geocoding 
 service built on the latest and greatest street data based on local 
 knowledge and sources. Geolocators for address points and streets are 
 frequently updated and combined into a composite locator which is then 
-published to ArcGIS Server and consumed in a multitude of web applications, 
+published to ArcGIS Server and consumed in a multitude of web applications; 
 ensuring that staff and end users can find even the newest of addresses 
 within the service area.
 
@@ -89,18 +90,17 @@ enter not only utility infrastructure issues from the field, but also address da
 that arise as part of ground-truthing while in the field. Conditions such as a paved-over 
 valve, vegetation issue, or evidence of a leak can be captured as well as sewer, 
 water, and reuse map data change requests. Field Observer allows Utility 
-personnel to quickly and easily identify both infrastructure and data issues and 
-get those issues logged and into the system of record where further corrective 
+personnel to quickly and easily identify both infrastructure and data issues by getting them logged and into the system of record where further corrective 
 actions can be taken.
 
-![Figure YY. Field Observer Collector Map showing missing asset location collected in the field.](images/field-observer-1.png){#id .class width=300}
+![Figure YY. Field Observer Collector Map showing the location of a missing asset collected in the field.](images/field-observer-1.png){#id .class width=300}
 
 Field Observer has been used recently to increase the accuracy of GIS data and 
 streamline communication between field crews and the GIS team. Field crews 
 verified the location of valves and used Field Observer to note changes to 
 valve locations. In the past, changes such as these were communicated using 
 screenshots and an email for each valve. Now, the information is added to the 
-map, which is instantly visible to GIS staff, resulting in a reduced volume 
+map, which is instantly visible to GIS staff; resulting in a reduced volume 
 of emails and an increased flow of information.
 
 ### Office
@@ -110,14 +110,14 @@ Isolation Trace application, with the addition of the Esri WAB Edit widget and t
 custom widgets to work with the Utility's 
 existing Code Red system (https://ecnetwork.com/community-notification/). 
 Code Red is used to notify customers of outages and other potential water supply 
-and quality issues. The Create Code Red tool (Figure PP) takes a outage area 
+and quality issues. The Create Code Red tool (Figure PP) takes an outage area 
 polygon from an isolation trace run and intersects it with parcel polygons to 
 prepare a notification area. The Extract Code Red Tool is a custom WAB widget powered 
 by a slightly modified version of the Esri Extract Data script tool from the Server 
 Tools Toolbox. This tool allows a user to select a Code Red polygon to export from 
 Advisory Manager as a shapefile for import into the Code Red system (Figure OO). Code Red 
 accepts the shapefile as an input, gathers all registered users in that 
-area, and sends out notifications regarding the issue, helping the Utility to 
+area, and sends out notifications regarding the issue; helping the Utility to 
 streamline their customer notification processes.
 
 ![Figure TT. Advisory Manager application with Create Code Red tool setup to be run.](images/advisory-manager-application-1.png)
@@ -126,13 +126,13 @@ streamline their customer notification processes.
 
 ![Figure OO. Selecting a Code Red notification polygon for export with the Extract Code Red tool. The polygon gets exported out as a shapefile, zipped up, and presented to the user for download.](images/advisory-manager-application-3.png)
 
-Advisory Manager is also used to manage the statuses of drinking water advisories. 
+Advisory Manager is also used to manage the status of drinking water advisories. 
 Following a recent water main break, SJCUD's Environmental Manager quickly 
 created a Boil Water Notice for the impacted customers and pushed that information 
 out to the public. Once the lab tests determined that the water was safe for 
 consumption it was just as easy to issue a retraction; so easy in fact that the 
 retraction was issued using Advisory Manager on a mobile phone from a tennis court.
-This anytime/anywhere application use makes the flow of information from the Utility to 
+This anytime/anywhere application makes the flow of information from the Utility to 
 their customers smooth and virtually instantaneous. 
 
 ### Community
@@ -201,7 +201,7 @@ at which issues were addressed and resolved.
 
 St. Johns County Utilities is using the Esri Platform to enable their workforce and 
 empower their customers. By putting the right tools, maps, and applications into 
-the hands of their field workforce, they are able to in turn provide 
+the hands of their field workforce, they can provide 
 quality data, up-to-date information, and timely and accurate 
 notifications to their customers. With the help of a healthy GIS, 
 the Utility will be able to keep up with rapid growth in a fast-changing 
@@ -213,9 +213,9 @@ gain efficiencies and save themselves and their customers money.
 ## Acknowledgements
 
 The author would like to thank Tom Tibbitts, Karri Thomas, and Bryan Bommersbach at 
-St. Johns County Water Utilities for partnering with GISinc and for their 
+St. Johns County Water Utilities for partnering with GISinc and 
 help with this article. Michael Parma and Chris Blinn of GISinc were 
-both extremely instrumental in workflows and applications implemented for 
+both instrumental in workflows and applications implemented for 
 the Utility by GISinc.
 
 ## References Cited
@@ -230,11 +230,11 @@ http://www.esri.com/library/newsletters/water/summer-2016.pdf
 
 ## About the author
 
-Chad Cooper has worked in the geospatial industry in technician, analyst, 
-and developer roles for the past 15 years in state government, oil and 
-gas, academia, and most recently, as a Solutions Engineer consulting 
-on the State and Local 
-government team with Geographic Information Services, Inc. (GISinc, 
+Chad Cooper has worked in the geospatial industry, over the last 15 years, in positions of technician, analyst, 
+and developer, as it pertains to state and local governments, oil and 
+gas, and academia. For the last three years, Chad has worked as a Solutions 
+Engineer consulting on the State and Local 
+Government team with Geographic Information Services, Inc. (GISinc, 
 http://www.gisinc.com). At work, he couldn't be happier spending the 
 day writing Python and helping clients such as St. Johns County Utilities get the most 
 out of their data through the use of the Esri Platform. At home, he 
